@@ -29,6 +29,8 @@ describe RubyPatterns::MyError do
   }
 end
 ```
+References:
+ * [spec/examples/parse_params_spec.rb](spec/examples/parse_params_spec.rb)
 
 ### Units of Work
  * small units of work
@@ -41,8 +43,6 @@ end
 ## Inner Exception
 Now Ruby 2.1 has brought the `#cause` method with the inner exception, if you're on an earlier version of ruby, use this:
 
-See [spec/examples/parse_params_spec.rb](spec/examples/parse_params_spec.rb).
-
 ```ruby
 class ParseParamsError < StandardError
   attr_reader :inner
@@ -53,7 +53,9 @@ class ParseParamsError < StandardError
 end
 ```
 
-See also [Exception Causes in Ruby 2.1](http://devblog.avdi.org/2013/12/25/exception-causes-in-ruby-2-1/)
+References:
+ * [spec/examples/parse_params_spec.rb](spec/examples/parse_params_spec.rb)
+ * [Exception Causes in Ruby 2.1](http://devblog.avdi.org/2013/12/25/exception-causes-in-ruby-2-1/)
 
 ## Contributing
 
