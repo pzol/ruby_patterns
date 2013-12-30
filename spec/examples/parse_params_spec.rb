@@ -6,7 +6,8 @@ class ParseParams
     @dirty = dirty
   end
 
-  # This will actually build the result. It will return a filled Hash if successful, or raise an exception
+  # This will actually build the result. It will return a filled Hash if successful, or raise an exception,
+
   # An optional block passed can be used for error reporting
   def call
     begin
@@ -39,6 +40,8 @@ private
     end
   end
 end
+
+###################################################################################################
 
 describe ParseParams do
   it 'sunny day' do

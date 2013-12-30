@@ -8,6 +8,28 @@ Some of the examples, might not be the simplest to follow, this might be due the
 All examples can be found in the specs. The implementations are kept within the specs - this is the way I always start an implementation, first write spec and implementation in one file, only if it's done, move it to its own file and include in the general codebase.
 
 ## General Guidelines
+### Errors
+Errors should be nested in a module in your library or app.
+
+```ruby
+module RubyPatterns
+  class MyError < StandardError; end
+end
+```
+
+### Specs
+
+#### described_class
+In the `describe` prefer adding a type instead of a string description for __unit tests__. Here I refer to `RubyPatters::MyError` to make sure the class actually exists. Also use `described_class` to refer to that class. If you change the name, you have to change it only in one place.
+
+```ruby
+describe RubyPatterns::MyError do
+  specify{
+    expect { raise described_class }.to_raise described_class
+  }
+end
+```
+
 ### Units of Work
  * small units of work
  * one class or module per activity (SRP)
